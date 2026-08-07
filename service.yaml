@@ -1,0 +1,12 @@
+name: patient-relationships-service
+port: 8105
+lang: python
+description: "patient-relationships-service \u2014 domain: patients"
+http_deps:
+- patients-service
+- audit-log-service
+publishes:
+- audit.event
+subscribes:
+- patient.created
+- patient.merged
